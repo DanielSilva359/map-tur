@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../PandaMapTur.Application/PandaMapTur.Application.csproj" />
+  <Project Path="../PandaMapTur.Domain/PandaMapTur.Domain.csproj" />
+  <Project Path="../PandaMapTur.Infraestructure/PandaMapTur.Infraestructure.csproj" />
+  <Project Path="PandaMapTur.API.csproj" />
+</Solution>
