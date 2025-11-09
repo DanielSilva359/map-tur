@@ -1,0 +1,6 @@
+@PandaMapTur.API_HostAddress = http://localhost:5208
+
+GET {{PandaMapTur.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
