@@ -1,23 +1,26 @@
+﻿using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Register controllers (required for app.MapControllers())
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+// Adiciona o OpenAPI nativo do .NET (sem Swagger)
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Expõe o documento OpenAPI
+app.MapOpenApi();
+
+// 👉 Adicione o Scalar aqui:
+app.MapScalarApiReference(options =>
 {
-    app.MapOpenApi();
-}
+    options.Title = "Minha API .NET 10";
+    options.Theme = ScalarTheme.Moon;
+});
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
+// Seus endpoints da API
 app.MapControllers();
 
 app.Run();
